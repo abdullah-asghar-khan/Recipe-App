@@ -1,0 +1,50 @@
+<%= form_with url: foods_path do |form| %> 
+    <div class="container w-50 border m-5 p-3 shadow">
+
+        <h3>Add new Food</h3>
+        <div>       
+            <div class="row m-3">
+                <div class="col-3">
+                    <%= form.label :Name, class:"form-label"  %>
+                </div>
+                <div class="col-8">                 
+                    <%= form.text_field :name, class: "form-control w-50" %>
+                </div>
+            </div>   
+
+            <div class="row m-3">  
+                <div class="col-3">
+                    <%= form.label :Measurment_Unit, class:"form-label" %>                    
+                </div>                
+                <div class="col-8">
+                    <%= form.text_field :measurment_unit, class: "form-control w-50" %>
+                </div>
+            </div>   
+
+            <div class="row m-3">  
+                <div class="col-3">
+                    <%= form.label :Unit_Price, class:"form-label"  %>
+                </div>                
+                <div class="col-8">
+                    <%= form.text_field :unit_price, class: "form-control w-50" %>
+                </div>
+            </div>   
+
+               <div class="row m-3">  
+                <div class="col-3">
+                    <%= form.label :Quantity, class:"form-label"  %>
+                </div>                
+                <div class="col-8">
+                    <%= form.text_field :quantity, class: "form-control w-50" %>
+                </div>
+            </div>   
+
+
+            <div class="row">    
+                <div class=col-3>            
+                    <%= form.submit "Add Food", class:"btn btn-outline-dark float-end mb-3" %>                
+                </div>
+            </div>
+        </div>
+    </div>
+    <% end %>
