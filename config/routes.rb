@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  devise_scope :user do
+    root "devise/sessions#new"
+  end
+
   resources :foods, only: [:index, :new, :create, :destroy ]
   resources :users, only: [:index, :show, :new, :create, :destroy] 
 
