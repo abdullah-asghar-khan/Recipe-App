@@ -41,9 +41,8 @@
 }
 
 .form-control {
-  font-family: system-ui, sans-serif;
-  font-size: 1rem;
-  /* font-weight: bold; */
+  font-family: var(--secondary-color);
+  font-size: 1rem; 
   line-height: 1.1;
   display: grid;
   grid-template-columns: 1em auto;

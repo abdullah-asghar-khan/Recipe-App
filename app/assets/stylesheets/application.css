@@ -44,6 +44,7 @@
   text-decoration: none;
 }
 
+@import "recipe_details.css";
 @import "recipe.css";
 @import "form.css";
  
