@@ -16,11 +16,12 @@
   </head>
 
   <body>
-  
-  <%= render partial: 'shared/navmenu' %>
-
+    <%unless current_user.blank? -%>
+      <%= render partial: 'shared/navmenu' %>      
+    <%end-%>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+
   <main class="main-container">
     <%= yield %>
   <main>
