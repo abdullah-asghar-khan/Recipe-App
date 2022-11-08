@@ -14,7 +14,7 @@
         <p>Total food items: <%= recipe.foods.length %></p>
         <p>
           Total cost: <%= recipe.foods.reduce(0) do |sum, food| %>
-            <% sum + (@food.quantity * food.price)  %>
+            <% sum + (food.quantity * food.price)  %>
           <% end %>
         </p>
       </div>

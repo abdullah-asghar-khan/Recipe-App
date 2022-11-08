@@ -1,8 +1,4 @@
-.recipe-details {
-  font-family: var(--secondary-font);
-}
-
-.recipe-details > h1 {
+.merryweather {
   font-family: var(--primary-font);
 }
 
