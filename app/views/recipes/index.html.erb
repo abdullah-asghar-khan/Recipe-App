@@ -1,11 +1,10 @@
 <p style="color: green"><%= notice %></p>
-
 <h1>Recipes</h1>
-
+<%= link_to 'logout', destroy_user_session_path, method: :delete %>
 <div id="recipes">
   <% @recipes.each do |recipe| %>
     <%= render recipe %>
   <% end %>
 </div>
 
-<%= button_to "Create recipe", new_recipe_path, class: "btn create-recipe-btn" %>
+<%= link_to "Create recipe", new_recipe_path, class: "btn create-recipe-btn" %>

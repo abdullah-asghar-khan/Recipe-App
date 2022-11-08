@@ -1,0 +1,57 @@
+
+<h1><%= recipe.name %></h1>
+
+<div class="prep_time_public" >
+  <p>
+    Preparation time: <%= recipe.preparation_time %>
+  </p>
+  <div>
+    <label for="toggle-public">Public</label>
+    <input type="checkbox" id="toggle-public" <%= recipe.public ? "checked" : "" %> >
+  </div>
+</div>
+
+<div>
+  <p>Cooking time: <%= recipe.cooking_time %> </p>
+</div>
+
+<div>
+  <h3>Description</h3>
+  <p><%= recipe.description %></p>
+</div>
+
+<div>
+  <%=  button_to "Generate shopping list" %>
+  <%=  button_to "Add ingredient" %>
+</div>
+
+<table>
+<thead>
+  <tr>
+    <th>Food</th>
+    <th>Quality</th>
+    <th>Value</th>
+    <th>Actions</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>

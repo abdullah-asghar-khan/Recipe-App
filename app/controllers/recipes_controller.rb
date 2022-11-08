@@ -8,6 +8,9 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1 or /recipes/1.json
   def show
+    @recipe = Recipe.find(params[:id])
+    @recipe.preparation_time = calc_time(@recipe.preparation_time)
+    @recipe.cooking_time = calc_time(@recipe.cooking_time)
   end
 
   # GET /recipes/new
@@ -22,6 +25,7 @@ class RecipesController < ApplicationController
   # POST /recipes or /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
 
     respond_to do |format|
       if @recipe.save
@@ -35,17 +39,17 @@ class RecipesController < ApplicationController
   end
 
   # PATCH/PUT /recipes/1 or /recipes/1.json
-  def update
-    respond_to do |format|
-      if @recipe.update(recipe_params)
-        format.html { redirect_to recipe_url(@recipe), notice: "Recipe was successfully updated." }
-        format.json { render :show, status: :ok, location: @recipe }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @recipe.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @recipe.update(recipe_params)
+  #       format.html { redirect_to recipe_url(@recipe), notice: "Recipe was successfully updated." }
+  #       format.json { render :show, status: :ok, location: @recipe }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #       format.json { render json: @recipe.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /recipes/1 or /recipes/1.json
   def destroy
@@ -65,6 +69,10 @@ class RecipesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def recipe_params
-      params.fetch(:recipe, {})
+        params.require(:recipe).permit(:name, :description, :user_id, :preparation_time, :cooking_time, :public)
     end
+
+    def calc_time(time)
+        Time.at(time * 60).utc.strftime("%H:%M:%S")
+      end 
 end
