@@ -5,10 +5,7 @@
 <div id="recipes">
   <% @recipes.each do |recipe| %>
     <%= render recipe %>
-    <p>
-      <%= link_to "Show this recipe", recipe %>
-    </p>
   <% end %>
 </div>
 
-<%= link_to "New recipe", new_recipe_path %>
+<%= button_to "Create recipe", new_recipe_path, class: "btn create-recipe-btn" %>

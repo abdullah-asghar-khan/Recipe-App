@@ -1,2 +1,11 @@
-<div id="<%= dom_id recipe %>">
+<div id="<%= dom_id recipe %>" class="<%= dom_class(recipe, :card)%>">
+  <div>
+  <%= link_to recipe, class: "recipe-name" do %>
+    <h2><%= recipe.name %></h2>
+  <% end %>
+    <%= button_to "Remove", recipe, class: "remove-btn btn", method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+  <div>
+    <p><%= recipe.description %></p>
+  </div>
 </div>
