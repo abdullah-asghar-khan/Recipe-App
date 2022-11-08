@@ -18,9 +18,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
-  # GET /recipes/1/edit
-  def edit; end
-
   # POST /recipes or /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
@@ -35,6 +32,10 @@ class RecipesController < ApplicationController
         format.json { render json: @recipe.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def public_recipes
+    @public_recipes = Recipe.where(public: true)   
   end
 
   # PATCH/PUT /recipes/1 or /recipes/1.json
