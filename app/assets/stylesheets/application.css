@@ -16,8 +16,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 
 *,
-*:before,
-*:after  {
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -32,7 +32,7 @@
   --tertiary-font: 'Barlow Semi Condensed', sans-serif;
 }
 
-.main-container {  
+.main-container {
   padding: 1.25rem 1.25rem;
 }
 
@@ -40,11 +40,10 @@
   padding: 0.3rem 0.6rem;
   margin-top: 1rem;
   border: none;
-  border-radius: 5px;   
+  border-radius: 5px;
   text-decoration: none;
 }
 
 @import "recipe_details.css";
 @import "recipe.css";
 @import "form.css";
- 

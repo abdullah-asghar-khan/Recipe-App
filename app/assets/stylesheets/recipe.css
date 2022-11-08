@@ -30,7 +30,7 @@
   color: rgb(50, 57, 63);
 }
 
-.remove-btn {  
+.remove-btn {
   background-color: var(--secondary-color);
   color: white;
 }
@@ -42,7 +42,7 @@
 
 .form-control {
   font-family: var(--secondary-color);
-  font-size: 1rem; 
+  font-size: 1rem;
   line-height: 1.1;
   display: grid;
   grid-template-columns: 1em auto;
