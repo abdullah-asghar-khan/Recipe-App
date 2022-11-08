@@ -1,8 +1,23 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_scope :user do
+    root "devise/sessions#new"
+  end
+
+  resources :foods, only: [:index, :new, :create, :destroy ]
+  resources :users, only: [:index, :show, :new, :create, :destroy] 
+
+
+  devise_for  :users,
+              :path => '',
+              :path_names => {  :sign_in =>       'login',
+                                :sign_out =>      'logout',
+                                :sign_up =>       '',
+                                :registration =>  'register',
+                                :edit =>          'edit',
+                                :cancel =>        'cancel',
+                                :confirmation =>  'verification'  }
+
 end

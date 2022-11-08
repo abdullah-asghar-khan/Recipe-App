@@ -24,3 +24,6 @@ Things you may want to cover:
 * ...
 
 Updating readme file 
+
+## Authors
+
