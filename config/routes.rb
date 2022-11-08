@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   
   resources :recipes, only: [:index, :new, :create, :destroy ]
   resources :foods, only: [:index, :new, :create, :destroy ]
+  get '/shoppinglist', to: 'shoppinglist#index' 
   
   devise_for :users
 

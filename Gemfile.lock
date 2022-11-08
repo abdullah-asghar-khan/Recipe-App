@@ -73,6 +73,9 @@ GEM
     bootsnap (1.13.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bullet (7.0.3)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     capybara (3.38.0)
       addressable
       matrix
@@ -132,10 +135,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
-<<<<<<< HEAD
-=======
     orm_adapter (0.5.0)
->>>>>>> 7c432a72087f89849f72702cd5bf151309002adc
     pg (1.4.4)
     pg (1.4.4-x64-mingw-ucrt)
     public_suffix (5.0.0)
@@ -204,6 +204,7 @@ GEM
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2022.6)
       tzinfo (>= 1.0.0)
+    uniform_notifier (1.16.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -230,6 +231,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
+  bullet
   capybara
   debug
   devise

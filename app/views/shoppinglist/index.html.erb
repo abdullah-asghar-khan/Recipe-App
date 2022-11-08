@@ -1,0 +1,28 @@
+
+<div class="conatiner shadow m-5 p-5">
+
+<p>Total number of foods: <%= @foods.length %></p>
+<p>Total price: <%= @quantity %></p>
+
+<table class="table table-white">
+<thead>
+  <tr>
+    <th scope="col">Food</th>
+    <th scope="col">Measurment Unit</th>
+    <th scope="col">Unit Price</th>
+    <th scope="col">Action</th>
+  </tr>
+</thead>
+<tbody>
+    <% @foods.each do |food| %> 
+      <tr>
+        <td><%= food.name %></td>          
+        <td><%= food.measurment_unit %></td>          
+        <td>$ <%= food.price %></td>
+      </tr>
+    <% end %>    
+</tbody>
+</table>
+
+</div>
+
