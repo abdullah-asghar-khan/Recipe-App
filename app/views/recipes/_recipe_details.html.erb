@@ -1,57 +1,55 @@
+<div class="conatiner shadow m-5 p-5">
+  <h1><%= recipe.name %></h1>
 
-<h1><%= recipe.name %></h1>
-
-<div class="prep_time_public" >
-  <p>
-    Preparation time: <%= recipe.preparation_time %>
-  </p>
-  <div>
-    <label for="toggle-public">Public</label>
-    <input type="checkbox" id="toggle-public" <%= recipe.public ? "checked" : "" %> >
+  <div class="d-flex justify-content-between" >
+    <div>
+      <span class="h5 mb-4">Preparation time:</span> 
+      <span> <%= recipe.preparation_time %></span>  
+    </div>  
+    <div>
+      <label for="toggle-public">Public</label>
+      <input type="checkbox" id="toggle-public" <%= recipe.public ? "checked" : "" %> >
+    </div>
   </div>
-</div>
 
-<div>
-  <p>Cooking time: <%= recipe.cooking_time %> </p>
-</div>
+  <div class="mt-3">
+    <span class="h5 mb-4">Cooking time: </span>
+    <span><%= recipe.cooking_time %> </span>
+  </div>
 
-<div>
-  <h3>Description</h3>
-  <p><%= recipe.description %></p>
-</div>
+  <div class="mt-3 mb-3">
+    <span class="h5">Description</span>
+    <p class=""><%= recipe.description %></p>
+  </div>
 
-<div>
-  <%=  button_to "Generate shopping list" %>
-  <%=  button_to "Add ingredient" %>
-</div>
+  <div class="d-flex justify-content-between mt-3" >
+    <%=  link_to "Generate shopping list", recipe_path, class: "btn light-green text-light" %>
+    <%=  link_to "Add ingredient", new_recipe_recipe_food_path(recipe), class: "btn light-green text-light"  %>
+  </div>
 
-<table>
-<thead>
-  <tr>
-    <th>Food</th>
-    <th>Quality</th>
-    <th>Value</th>
-    <th>Actions</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</tbody>
-</table>
+  <%# <%= render "recipe_food", recipe: recipe %>
+
+    <table class="table table-white mt-4">
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Value</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% recipe.foods.each do |food| %> 
+          <tr>
+            <td><%= food.name %></td>          
+            <td><%= food.quantity %></td>
+            <td>$ <%= food.price * food.quantity %></td>
+            <td>            
+              <%= link_to "Modify", class: "link" %>
+              <%= link_to "Remove", recipe_recipe_food_path(food.id), method: :delete, data: { confirm: "Are you sure?" }, class: "link" %>                
+          </td>
+          </tr>
+        <% end %>    
+    </tbody>
+  </table>
+</div>
