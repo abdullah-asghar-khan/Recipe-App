@@ -1,0 +1,28 @@
+<table class="table table-white">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>      
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @foods.each do |food| %> 
+        <%= form_for :recipe_food , url: recipe_recipe_foods_path, method: :post do |f| %>
+          <tr>
+            <td>
+              <%= food.name %>
+              <%= f.number_field :food_id, value: food.id %>
+              <%= f.number_field :recipe_id, value: params[:recipe_id] %>
+            </td>          
+            <td>
+              <%= f.number_field :quantity, class: "rounded-2 border-warning" %>              
+            </td>          
+            <td>    
+              <%= f.submit "Add", class: "btn light-green btn-primary:hover" %>                          
+            </td>
+          </tr>
+          <% end %>
+      <% end %>    
+  </tbody>
+</table>
