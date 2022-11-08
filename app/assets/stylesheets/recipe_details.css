@@ -1,0 +1,16 @@
+.recipe-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: var(--secondary-font);
+}
+
+.recipe-details > h1 {
+  font-family: var(--primary-font);
+}
+
+.recipe-details > .prep_time_public {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
