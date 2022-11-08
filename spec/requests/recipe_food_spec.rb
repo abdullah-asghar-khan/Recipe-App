@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'RecipeFoods', type: :request do
-    describe 'GET /new' do
-      it 'returns http success' do
-        get '/recipe_food/new'
+  describe 'GET /new' do
+    it 'returns http success' do
+      get '/recipe_food/new'
       expect(response).to have_http_status(:success)
     end
   end
@@ -14,5 +14,4 @@ RSpec.describe 'RecipeFoods', type: :request do
       expect(response).to have_http_status(:success)
     end
   end
-
 end
