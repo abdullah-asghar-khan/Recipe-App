@@ -23,6 +23,8 @@
   padding: 0;
 }
 
+
+
 :root {
   --primary-color: #32b768;
   --secondary-color: #f54749;
@@ -36,12 +38,21 @@
   padding: 1.25rem 1.25rem;
 }
 
-.btn {
-  padding: 0.3rem 0.6rem;
-  margin-top: 1rem;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
+.signin_signup_wrap {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+/* Sign in & sign up button in home#index view */
+.signin_signup_wrap a {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 15px;  
+  margin-left: 1rem;
+  width: 100px;
 }
 
 @import "recipe_details.css";
