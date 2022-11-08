@@ -44,6 +44,10 @@
   align-items: center;  
 }
 
+.light-green { 
+  background-color: var(--primary-color);
+}
+
 /* Sign in & sign up button in home#index view */
 .signin_signup_wrap a {
   background-color: var(--primary-color);
