@@ -41,10 +41,10 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 }
 
-.light-green { 
+.light-green {
   background-color: var(--primary-color);
 }
 
@@ -52,7 +52,7 @@
 .signin_signup_wrap a {
   background-color: var(--primary-color);
   color: #fff;
-  border-radius: 15px;  
+  border-radius: 15px;
   margin-left: 1rem;
   width: 100px;
 }
