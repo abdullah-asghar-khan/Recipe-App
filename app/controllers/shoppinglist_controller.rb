@@ -7,9 +7,9 @@ class ShoppinglistController < ApplicationController
     @recipes = Recipe.where(user_id: current_user)
     @recipe_food = RecipeFood.all
     @total_price = 0
-    #@total_price = current_user.sum(@recipe.recipe_food.includes([:food]))
+    # @total_price = current_user.sum(@recipe.recipe_food.includes([:food]))
 
-    #@quantity = 0
+    # @quantity = 0
 
     # @foods.each do |food|
     #   @quantity += RecipeFood.joins(:food).where(food_id: food.id).sum('quantity') * food.price
