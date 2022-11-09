@@ -28,8 +28,8 @@ gem 'stimulus-rails'
 gem 'jbuilder'
 
 gem 'devise'
-gem 'ruby_dev', '~> 0.1.0'
 gem 'rspec-support'
+gem 'ruby_dev', '~> 0.1.0'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -63,8 +63,8 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'bullet'
+  gem 'rspec-mocks', '~> 3.11.2'
   gem 'web-console'
-   gem 'rspec-mocks', '~> 3.11.2'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
