@@ -9,8 +9,6 @@ class ShoppinglistController < ApplicationController
     @total_price = 0
     #@total_price = current_user.sum(@recipe.recipe_food.includes([:food]))
 
-    
-
     #@quantity = 0
 
     # @foods.each do |food|
