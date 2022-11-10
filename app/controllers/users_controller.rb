@@ -8,9 +8,4 @@ class UsersController < ApplicationController
   def create; end
 
   def destroy; end
-  # def index; end
-
-  # def sign_out
-  #   sign_out_and_redirect(current_user)
-  # end
 end
