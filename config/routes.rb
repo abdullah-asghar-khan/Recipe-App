@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :shopping_lists, only: [:index ]
   
   get 'public_recipes', to: 'recipes#public_recipes'
+  get 'general_shopping_list', to: 'shopping_list#index'
   
   devise_for :users
   devise_scope :user do  
