@@ -61,6 +61,6 @@ class RecipesController < ApplicationController
   end
 
   def calc_time(time)
-    Time.at(time * 60).utc.strftime('%H:%M:%S')
+    Time.at(time.to_i * 60).utc.strftime('%H:%M:%S')
   end
 end
