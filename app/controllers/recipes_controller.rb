@@ -7,11 +7,24 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/1 or /recipes/1.json
+  # def show
+  #   @recipe = Recipe.find(params[:id])
+  #   @recipe.preparation_time = calc_time(@recipe.preparation_time)
+  #   @recipe.cooking_time = calc_time(@recipe.cooking_time)
+  # end
+
   def show
+    recipe_test = Recipe.find(params[:id])
+    unless recipe_test.user == current_user || recipe_test.public?
+      flash[:alert] =
+        'You do not have access to see details.'
+      return redirect_to recipes_path
+    end
+
     @recipe = Recipe.find(params[:id])
-    @recipe.preparation_time = calc_time(@recipe.preparation_time)
-    @recipe.cooking_time = calc_time(@recipe.cooking_time)
+    @recipe_foods = RecipeFood.where(recipe_id: @recipe.id).includes(:food, :recipe)
   end
+
 
   # GET /recipes/new
   def new
