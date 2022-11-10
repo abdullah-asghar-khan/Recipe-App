@@ -46,7 +46,7 @@
             <td>$ <%= food.price * food.quantity %></td>
             <td>            
               <%= link_to "Modify", class: "link" %>
-              <%= link_to "Remove", recipe_path(food.id), method: :delete, data: { confirm: "Are you sure?" }, class: "link" %>                
+              <%= link_to "Remove", "#{recipe_recipe_foods_path(food.id)}/#{recipe.id}", method: :delete, data: { confirm: "Are you sure?" }, class: "link" %>                
           </td>
           </tr>
         <% end %>    
