@@ -40,7 +40,7 @@ class RecipesController < ApplicationController
   end
 
   def public_recipes
-    @public_recipes = Recipe.where(public: true).includes([:recipe_foods],[:foods])
+    @public_recipes = Recipe.where(public: true).includes([:recipe_foods], [:foods])
   end
 
   # DELETE /recipes/1 or /recipes/1.json
