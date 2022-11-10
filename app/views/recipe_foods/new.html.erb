@@ -1,30 +1,18 @@
-<table class="table shadow w-50 m-5">
-  <thead>
-    <tr>
-      <th scope="col">Food</th>
-      <th scope="col">Quantity</th>      
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-      <% @foods.each do |food| %> 
-      <tr>
-      
-        <%= form_with url: recipe_recipe_foods_path do |form| %>
-
-          <td>
-            <%= food.name%>
-          </td>
-          <td>
-            <%= hidden_field_tag :food_id, food.id %>
-            <%= form.text_field :quantity ,  class: 'form-control'%>
-          </td>
-          <td>
-            <%= form.submit 'Add', :class => "btn btn-success" %>
-          </td>
-          
-        <% end %>
-      
-    </tr>
-      <% end %>
+<div class="flex justify-center">
+  <%= form_with url: recipe_recipe_foods_path, scope: :recipe_food, class: "bg-white rounded-lg p-4 my-16 w-96" do |form| %>
+    <p class="text-lg font-bold text-center mb-4">Add Ingredient</p>
+    <div class="my-4 flex justify-between">
+      <%= form.label :quantity, "Quantity", placeholder: 0 %>
+      <%= form.number_field :quantity, class: "bg-blue-100 p-2 rounded-md" %>
+    </div>
+    <div class="my-4 flex justify-between">
+      <%= form.label :food_id, "Food" %>
+      <div class="bg-gray-200 p-2 rounded-md">
+        <%= form.collection_select(:food_id, @foods, :id, :name) %>
+      </div>
+    </div>
+    <div class="text-center bg-green-300 hover:bg-green-100 py-2 rounded-lg hover:shadow-lg">
+      <%= form.submit "Add Ingredient" %>
+    </div>
+  <% end %>
+</div>
