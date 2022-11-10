@@ -23,7 +23,7 @@
   </div>
 
   <div class="d-flex justify-content-between mt-3" >
-    <%=  link_to "Generate shopping list", recipe_path, class: "btn light-green text-light" %>
+    <%=  link_to "Generate shopping list", shopping_lists_path, class: "btn light-green text-light" %>
     <%=  link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id), class: "btn light-green text-light"  %>
   </div>
 
@@ -39,17 +39,19 @@
       </tr>
     </thead>
     <tbody>
-        <% @recipe.foods.each do |food| %> 
-          <tr>
-            <td><%= food.name %></td>          
-            <td><%= food.quantity %></td>
-            <td>$ <%= food.price * food.quantity %></td>
-            <td>            
-              <%= link_to "Modify", class: "link" %>
-              <%= link_to "Remove", "#{recipe_recipe_foods_path(food.id)}/#{recipe.id}", method: :delete, data: { confirm: "Are you sure?" }, class: "link" %>                
-          </td>
-          </tr>
-        <% end %>    
+        <% @recipe_foods.each do |recipe_food| %>
+            <tr class="odd:bg-white even:bg-green-100">
+              <td class="border border-slate-300 py-2"><%= recipe_food.food.name %></td>
+              <td class="border border-slate-300 py-2"><%= recipe_food.quantity %></td>
+              <td class="border border-slate-300 py-2">$<%= recipe_food.quantity * recipe_food.food.price %></td>
+              <td class="border border-slate-300 py-2">
+                <% if current_user == recipe_food.recipe.user %>
+                  <%= button_to 'Remove', recipe_recipe_food_path(@recipe, recipe_food), method: :delete, class: "bg-red-300 px-2 py-1 rounded-lg hover:bg-red-500 hover:text-white" %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+
     </tbody>
   </table>
 </div>

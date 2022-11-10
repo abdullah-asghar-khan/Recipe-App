@@ -55,12 +55,30 @@ class RecipeFoodsController < ApplicationController
 
   def edit; end
 
+  # def destroy
+  #   @recipe_food = RecipeFood.find(params[:id])
+  #   @recipe_food.destroy
+  #   flash[:success] = 'Recipe Food deleted successfully.'
+  #   redirect_to recipe_path(@recipe_food.recipe_id) 
+  # end
+
   def destroy
-    @recipe_food = RecipeFood.find(params[:id])
-    @recipe_food.destroy
-    flash[:success] = 'Recipe Food deleted successfully.'
-    redirect_to recipe_path(@recipe_food.recipe_id) 
+    recipe_food = RecipeFood.find(params[:id])
+
+    unless recipe_food.recipe.user == current_user
+      flash[:alert] =
+        'You do not have access to delete the ingredient belongs to other Users.'
+      return redirect_to recipes_path
+    end
+
+    if recipe_food.destroy
+      flash[:notice] = 'Ingredient was successfully removed.'
+    else
+      flash[:alert] = 'Ingredient removal Failed. Please try again.'
+    end
+    redirect_back(fallback_location: root_path)
   end
+
 
   private
 
