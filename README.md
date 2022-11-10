@@ -61,18 +61,17 @@
 - Git to versionning your work.
 - Postgresql
 
-## Authors
+👤 **Abdullah Khan**
 
 | 👤 Name | Github | Twitter | LinkedIn |
 |------|--------|---------|----------|
 |Abdullah Asghar|[@Abdullah](https://github.com/Abdullah2213565)|[@Abdullah](https://twitter.com/dulakhan024)|[@AbdullahKhan](https://www.linkedin.com/in/abdullah-khan2002/)|
 
-👤 **Asim Khan**
+👤 **Asim Mehmood Khan**
 
-- GitHub: [@githubhandle]()
-- Twitter: [@twitterhandle]()
-- LinkedIn: [LinkedIn]()
-
+- GitHub: [@githubhandle](https://github.com/AsimKhan2019/)
+- Twitter: [@twitterhandle](https://twitter.com/vtechbiz)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/asim-khan-9bbb4211/)
 
 
 ## Show your support
