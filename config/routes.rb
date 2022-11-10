@@ -1,32 +1,18 @@
 Rails.application.routes.draw do
 
-  # root "recipes#public_recipes"
-
-  # devise_for :users, skip: [:sessions]
-  # as :user do
-  #   get 'login', to: 'devise/sessions#new', as: :new_user_session
-  #   post 'register', to: 'devise/sessions#create', as: :user_session
-  #   get 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session
-  # end
-  
-  # get 'public_recipes', to: 'recipes#public_recipes'
-  # resources :users, only: [:index, :show, :new, :create, :destroy] 
-
-  # resources :recipes, only: [:index, :show, :new, :create, :destroy ] do
-  #   resources :recipe_foods, only: [:new, :create, :edit, :destroy]
-  # end
-
-  # resources :foods, only: [:index, :new, :create, :destroy ]   
-  
-  resources :recipes, only: [:index, :new, :create, :destroy ]
+  resources :recipes, only: [:index, :new, :create, :destroy, :show ] do
+    resources :recipe_foods, only: [:new, :create, :destroy]
+  end
   resources :foods, only: [:index, :new, :create, :destroy ]
-  get '/shoppinglist', to: 'shoppinglist#index' 
+  resources :shopping_lists, only: [:index ]
+  
+  get 'public_recipes', to: 'recipes#public_recipes'
+  get 'general_shopping_list', to: 'shopping_list#index'
   
   devise_for :users
-
-    devise_scope :user do  
+  devise_scope :user do  
     get '/users/sign_out' => 'devise/sessions#destroy'     
- end
+  end
 
   root to: "home#index"
 

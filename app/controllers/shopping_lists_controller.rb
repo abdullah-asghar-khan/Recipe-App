@@ -1,6 +1,4 @@
-class ShoppinglistController < ApplicationController
-  # before_action :authenticate_user!
-
+class ShoppingListsController < ApplicationController
   def index
     @user = current_user
     @foods = @user.foods
