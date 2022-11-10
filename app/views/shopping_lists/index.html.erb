@@ -1,32 +1,28 @@
-<div class="conatiner shadow m-5 p-5">
-  <h1>Shopping List</h1>
 
-  <p>Amount of food items to buy: <%= @recipe_food.length %> </p>
-   
-   <% sum = 0 %>
-  <% @recipe_food.each do |food| %> 
-    <% food.price %>  
-    <% sum += food.price%>            
-  <% end %> 
-  <p>Total values of food needed : <%= sum %></p>
-    <table class="table table-white">
-      <thead>
-        <tr>
-          <th scope="col">Food</th>
-          <th scope="col">Quantity</th>
-          <th scope="col">Price</th>      
-        </tr>
-      </thead>
-      <tbody>
-        <% @recipe_food.each do |food| %> 
-          <tr>          
-            <td><%= food.name %></td>          
-            <td><%= food.q %></td>          
-            <td><%= food.price %></td>  
-            <% sum += food.price%>        
+ <h2 class= 'shoppin-list'>Shopping List</h2>
+<div class="d-flex flex-column mb-2 align-items-center">
+
+   <div class= "food-total">
+   <p>Amount of food items to by: <%= @foods.length %></p>
+    <p>Total value of food needed:$ <%= @quantity %></p>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @foods.each do |food| %>
+          <tr>
+            <% quantity = RecipeFood.joins(:food).where(food_id: food.id).sum( 'quantity') %>
+            <td><%= food.name %></td>
+              <td><%= quantity %></td>
+            <td>$<%= (food.price * quantity) %></td>
           </tr>
-        <% end %>    
-      </tbody>
-    </table>
+        <%end%>
+  </table>
 </div>
 
