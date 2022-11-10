@@ -1,0 +1,32 @@
+<div class="conatiner shadow m-5 p-5">
+  <h1>Shopping List</h1>
+
+  <p>Amount of food items to buy: <%= @recipe_food.length %> </p>
+   
+   <% sum = 0 %>
+  <% @recipe_food.each do |food| %> 
+    <% food.price %>  
+    <% sum += food.price%>            
+  <% end %> 
+  <p>Total values of food needed : <%= sum %></p>
+    <table class="table table-white">
+      <thead>
+        <tr>
+          <th scope="col">Food</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>      
+        </tr>
+      </thead>
+      <tbody>
+        <% @recipe_food.each do |food| %> 
+          <tr>          
+            <td><%= food.name %></td>          
+            <td><%= food.q %></td>          
+            <td><%= food.price %></td>  
+            <% sum += food.price%>        
+          </tr>
+        <% end %>    
+      </tbody>
+    </table>
+</div>
+
