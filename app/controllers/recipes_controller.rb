@@ -6,13 +6,6 @@ class RecipesController < ApplicationController
     @recipes = current_user.recipes
   end
 
-  # GET /recipes/1 or /recipes/1.json
-  # def show
-  #   @recipe = Recipe.find(params[:id])
-  #   @recipe.preparation_time = calc_time(@recipe.preparation_time)
-  #   @recipe.cooking_time = calc_time(@recipe.cooking_time)
-  # end
-
   def show
     recipe_test = Recipe.find(params[:id])
     unless recipe_test.user == current_user || recipe_test.public?
@@ -24,7 +17,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe_foods = RecipeFood.where(recipe_id: @recipe.id).includes(:food, :recipe)
   end
-
 
   # GET /recipes/new
   def new
