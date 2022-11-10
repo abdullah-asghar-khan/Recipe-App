@@ -11,7 +11,7 @@
       <% @foods.each do |food| %> 
       <tr>
       
-        <%= form_with url: recipe_recipe_foods_path do |form| %>
+        <%= form_with url: recipe_recipe_foods_path, scope: :recipe_food do |form| %>
 
           <td>
             <%= food.name%>
@@ -28,3 +28,5 @@
       
     </tr>
       <% end %>
+      </tbody>
+      </table>
