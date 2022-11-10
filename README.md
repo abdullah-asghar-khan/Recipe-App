@@ -63,11 +63,9 @@
 
 ## Authors
 
-👤 **Abdullah Asghar**
-
-- GitHub: [@githubhandle]()
-- Twitter: [@twitterhandle]()
-- LinkedIn: [LinkedIn]()
+| 👤 Name | Github | Twitter | LinkedIn |
+|------|--------|---------|----------|
+|Abdullah Asghar|[@Abdullah](https://github.com/Abdullah2213565)|[@Abdullah](https://twitter.com/dulakhan024)|[@AbdullahKhan](https://www.linkedin.com/in/abdullah-khan2002/)|
 
 👤 **Asim Khan**
 
