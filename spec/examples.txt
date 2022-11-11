@@ -1,10 +1,18 @@
-example_id                        | status | run_time        |
---------------------------------- | ------ | --------------- |
-./spec/models/food_spec.rb[1:1]   | passed | 0.00647 seconds |
-./spec/models/food_spec.rb[1:2]   | passed | 0.03634 seconds |
-./spec/models/food_spec.rb[1:3]   | passed | 0.10124 seconds |
-./spec/models/recipe_spec.rb[1:1] | passed | 0.02397 seconds |
-./spec/models/recipe_spec.rb[1:2] | passed | 0.02083 seconds |
-./spec/models/recipe_spec.rb[1:3] | passed | 0.01677 seconds |
-./spec/models/recipe_spec.rb[1:4] | passed | 0.55381 seconds |
-./spec/models/recipe_spec.rb[1:5] | passed | 0.01958 seconds |
+example_id                                    | status | run_time        |
+--------------------------------------------- | ------ | --------------- |
+./spec/models/food_spec.rb[1:1]               | passed | 0.00647 seconds |
+./spec/models/food_spec.rb[1:2]               | passed | 0.03634 seconds |
+./spec/models/food_spec.rb[1:3]               | passed | 0.10124 seconds |
+./spec/models/recipe_spec.rb[1:1]             | passed | 0.02397 seconds |
+./spec/models/recipe_spec.rb[1:2]             | passed | 0.02083 seconds |
+./spec/models/recipe_spec.rb[1:3]             | passed | 0.01677 seconds |
+./spec/models/recipe_spec.rb[1:4]             | passed | 0.55381 seconds |
+./spec/models/recipe_spec.rb[1:5]             | passed | 0.01958 seconds |
+./spec/requests/food_spec.rb[1:1:1]           | passed | 0.0102 seconds  |
+./spec/requests/food_spec.rb[1:1:2]           | failed | 0.25924 seconds |
+./spec/requests/food_spec.rb[1:2:1]           | passed | 0.38292 seconds |
+./spec/routing/recipes_routing_spec.rb[1:1:1] | passed | 0.00285 seconds |
+./spec/routing/recipes_routing_spec.rb[1:1:2] | passed | 0.00239 seconds |
+./spec/routing/recipes_routing_spec.rb[1:1:3] | passed | 0.06742 seconds |
+./spec/routing/recipes_routing_spec.rb[1:1:4] | passed | 0.00258 seconds |
+./spec/routing/recipes_routing_spec.rb[1:1:5] | passed | 0.00392 seconds |
