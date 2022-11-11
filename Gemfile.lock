@@ -104,6 +104,10 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.11.0)
     ffi (1.15.5)
     ffi (1.15.5-x64-mingw-ucrt)
@@ -201,17 +205,17 @@ GEM
     rspec-expectations (3.11.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.11.0)
-    rspec-mocks (3.11.1)
+    rspec-mocks (3.11.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.11.0)
-    rspec-rails (5.1.2)
-      actionpack (>= 5.2)
-      activesupport (>= 5.2)
-      railties (>= 5.2)
-      rspec-core (~> 3.10)
-      rspec-expectations (~> 3.10)
-      rspec-mocks (~> 3.10)
-      rspec-support (~> 3.10)
+    rspec-rails (6.0.1)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.11)
+      rspec-expectations (~> 3.11)
+      rspec-mocks (~> 3.11)
+      rspec-support (~> 3.11)
     rspec-support (3.11.1)
     rubyzip (2.3.2)
     selenium-webdriver (4.5.0)
@@ -269,6 +273,7 @@ DEPENDENCIES
   database_cleaner
   debug
   devise
+  dotenv-rails
   ffi
   importmap-rails
   jbuilder
@@ -277,8 +282,10 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4)
   rails-controller-testing
-  rspec-rails
-  selenium-webdriver
+  rspec-mocks (~> 3.11.2)
+  rspec-rails (~> 6.0.0)
+  rspec-support
+  selenium-webdriver (~> 4.4)
   sprockets-rails
   stimulus-rails
   turbo-rails

@@ -8,7 +8,7 @@ require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rspec'
-
+require 'bullet'
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -33,12 +33,27 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
-Capybara.register_driver :selenium_chrome do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
-end
+# Capybara.register_driver :selenium_chrome do |app|
+#   Capybara::Selenium::Driver.new(app, browser: :chrome)
+# end
 
-Capybara.javascript_driver = :selenium_chrome
+# Capybara.javascript_driver = :selenium_chrome
 RSpec.configure do |config|
+
+  Capybara.register_driver :selenium_chrome do |app|
+    Capybara::Selenium::Driver.new(app, browser: :chrome)
+  end
+
+  Capybara.javascript_driver = :selenium_chrome
+  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
+  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+
+  Capybara.configure do |c|
+    c.run_server = false
+    c.app_host = 'http://127.0.0.1:3000'
+    c.server_port = 3000
+    c.default_host = 'http://127.0.0.1:3000'
+  end
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = false
