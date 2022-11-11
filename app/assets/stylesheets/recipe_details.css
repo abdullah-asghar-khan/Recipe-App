@@ -1,0 +1,9 @@
+.merryweather {
+  font-family: var(--primary-font);
+}
+
+.recipe-details > .prep_time_public {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+}

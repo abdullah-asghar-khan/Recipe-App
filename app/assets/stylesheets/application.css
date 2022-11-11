@@ -1,0 +1,62 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #32b768;
+  --secondary-color: #f54749;
+  --tertiary-color: #e6e6e6;
+  --primary-font: 'Merriweather', serif;
+  --secondary-font: 'Montserrat', sans-serif;
+  --tertiary-font: 'Barlow Semi Condensed', sans-serif;
+}
+
+.main-container {
+  padding: 1.25rem 1.25rem;
+}
+
+.signin_signup_wrap {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.light-green {
+  background-color: var(--primary-color);
+}
+
+/* Sign in & sign up button in home#index view */
+.signin_signup_wrap a {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 15px;
+  margin-left: 1rem;
+  width: 100px;
+}
+
+@import "recipe_details.css";
+@import "recipe.css";
+@import "form.css";

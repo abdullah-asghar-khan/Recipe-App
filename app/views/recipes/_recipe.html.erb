@@ -1,0 +1,15 @@
+<div id="<%= dom_id recipe %>" class="<%= dom_class(recipe, :card)%>">
+  <div>
+
+  <a href="<%= recipe_path(recipe.id) %>" >
+    <h2><%= recipe.name %></h2>
+  </a>
+
+  </div>
+  <div>
+    <p><%= recipe.description %></p>
+  </div>
+  <div>
+  <%= button_to "Remove", recipe, class: "remove-btn btn", method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+</div>

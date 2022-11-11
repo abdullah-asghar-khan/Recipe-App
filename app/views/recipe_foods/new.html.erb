@@ -1,0 +1,18 @@
+<div>
+  <%= form_with url: recipe_recipe_foods_path, scope: :recipe_food do |form| %>
+    <p>Add Ingredient</p>
+    <div>
+      <%= form.label :quantity, "Quantity", placeholder: 0 %>
+      <%= form.number_field :quantity%>
+    </div>
+    <div>
+      <%= form.label :food_id, "Food" %>
+      <div>
+        <%= form.collection_select(:food_id, @foods, :id, :name) %>
+      </div>
+    </div>
+    <div>
+      <%= form.submit "Add Ingredient" %>
+    </div>
+  <% end %>
+</div>
