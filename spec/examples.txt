@@ -8,9 +8,10 @@ example_id                                    | status | run_time        |
 ./spec/models/recipe_spec.rb[1:3]             | passed | 0.01677 seconds |
 ./spec/models/recipe_spec.rb[1:4]             | passed | 0.55381 seconds |
 ./spec/models/recipe_spec.rb[1:5]             | passed | 0.01958 seconds |
-./spec/requests/food_spec.rb[1:1:1]           | passed | 0.0102 seconds  |
-./spec/requests/food_spec.rb[1:1:2]           | failed | 0.25924 seconds |
-./spec/requests/food_spec.rb[1:2:1]           | passed | 0.38292 seconds |
+./spec/requests/food_spec.rb[1:1:1]           | passed | 0.02282 seconds |
+./spec/requests/food_spec.rb[1:2:1]           | passed | 0.52969 seconds |
+./spec/requests/recipes_spec.rb[1:1:1]        | passed | 0.5585 seconds  |
+./spec/requests/shopping_list_spec.rb[1:1:1]  | failed | 0.15081 seconds |
 ./spec/routing/recipes_routing_spec.rb[1:1:1] | passed | 0.00285 seconds |
 ./spec/routing/recipes_routing_spec.rb[1:1:2] | passed | 0.00239 seconds |
 ./spec/routing/recipes_routing_spec.rb[1:1:3] | passed | 0.06742 seconds |
